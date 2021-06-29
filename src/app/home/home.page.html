@@ -1,20 +1,71 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="container" style="position: relative; height: 100%">
+    <!-- Thumbnail -->
+    <div style="padding: 15px">
+      <img src="assets/img/etec-coat-of-arms.png" alt="etec coat of arms" />
+    </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <!-- Name -->
+    <ion-item>
+      <ion-input type="text" placeholder="name" [(ngModel)]="student.name">
+      </ion-input>
+    </ion-item>
+
+    <!-- Button sign people -->
+    <ion-item>
+      <ion-button
+        class="ion-margim-top"
+        lines="none"
+        color="primary"
+        (click)="insertStudentIntoHome()"
+        style="padding: 1px; height: 80%; width: 90%"
+      >
+        <img
+          src="assets/img/sorting-hat.jpg"
+          alt="https://clipartart.com/images/sorting-hat-clipart-4.jpg"
+          style="width: 120px; height: 120px; object-fit: cover"
+        />
+        <span></span>
+        Send</ion-button
+      >
+    </ion-item>
+
+    <div style="margin-top: 3px">
+      <div>
+        <ion-title> Grifinória(Gryffindor) </ion-title>
+        <ion-list *ngFor="let grifinoriaStudent of grifinoriaStudents">
+          <ion-item>
+            <ion-title> {{ grifinoriaStudent }} </ion-title>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div>
+        <ion-title> Lufa-Lufa(Hufflepuff) </ion-title>
+        <ion-list *ngFor="let lufaStudent of lufaStudents">
+          <ion-item>
+            <ion-title> {{ lufaStudent }} </ion-title>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div>
+        <ion-title> Corvinal(Ravenclaw) </ion-title>
+        <ion-list *ngFor="let corvinalStudent of corvinalStudents">
+          <ion-item>
+            <ion-title> {{ corvinalStudent }} </ion-title>
+          </ion-item>
+        </ion-list>
+      </div>
+
+      <div>
+        <ion-title> Sonserina(Slytherin) </ion-title>
+        <ion-list *ngFor="let sonserinaStudent of sonserinaStudents">
+          <ion-item>
+            <ion-title> {{ sonserinaStudent }} </ion-title>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
   </div>
 </ion-content>
